@@ -1,0 +1,30 @@
+{
+	"name": "wordpress-portfolio",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Custom WordPress themes (classic and block) and a functionality plugin with custom post types, Gutenberg blocks and a secure contact form.",
+	"author": "Innocent Emediong Friday",
+	"license": "GPL-2.0-or-later",
+	"workspaces": [
+		"plugins/groundwork"
+	],
+	"engines": {
+		"node": ">=20",
+		"npm": ">=10"
+	},
+	"scripts": {
+		"build": "npm run build --workspace=groundwork",
+		"start": "npm run start --workspace=groundwork",
+		"lint:js": "wp-scripts lint-js plugins/groundwork/src themes/lintel/assets/js",
+		"lint:css": "wp-scripts lint-style \"themes/**/*.css\" \"plugins/groundwork/src/**/*.scss\"",
+		"lint": "npm run lint:js && npm run lint:css",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:demo:lintel": "wp-env run cli wp eval-file wp-content/portfolio-demo/demo-content.php lintel --user=admin",
+		"env:demo:commons": "wp-env run cli wp eval-file wp-content/portfolio-demo/demo-content.php commons --user=admin"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^12.1.0",
+		"@wordpress/scripts": "^37.1.0"
+	}
+}

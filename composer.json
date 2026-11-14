@@ -1,0 +1,31 @@
+{
+	"name": "emediong/wordpress-portfolio",
+	"description": "Custom WordPress themes and a functionality plugin.",
+	"type": "project",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Innocent Emediong Friday",
+			"homepage": "https://emediong.dev"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "^3.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf",
+		"lint:syntax": "find themes plugins demo -name '*.php' -not -path '*/node_modules/*' -print0 | xargs -0 -n1 php -l"
+	}
+}

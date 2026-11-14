@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Local environment and logs
+.wp-env.override.json
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
